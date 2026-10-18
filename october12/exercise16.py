@@ -3,8 +3,7 @@
 '''
 
 
-word_str = input('write something ;')
-s = word_str
+s = input('write something ;')
 if s.isdigit():
     print(' eto chislo')
 else:

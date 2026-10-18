@@ -11,10 +11,14 @@ try:
         n2 = int(n2_str)
     except ValueError as e:
         print('sorry,number 2 is not an integer! Please try again!')
+        exit(0)
 except ValueError as e:
     print('sorry number 1 is not an integer! Please try again!')
+    exit(0)
 
-if n1 > n2 :
+if n1 > n2:
     print('max')
 else:
     print('min')
+
+
