@@ -136,6 +136,7 @@ print(f'у одного: {u}')
 В конце выведи количество успешных и ошибочных строк.
 
 '''
+'''
 ok_count = 0
 error_count = 0
 while True:
@@ -155,3 +156,70 @@ while True:
         error_count += 1
 print(f'Успешные:{ok_count}')
 print(f'ошибочные:{error_count}')
+'''
+'''
+5. Меню с номерами и выбором
+(enumerate, list, if, input)
+
+menu = ["Плов", "Лагман", "Манты", "Шашлык", "Чай"]
+
+Выведи меню с номерами через enumerate.
+Спроси номер блюда.
+Если номер в диапазоне — выведи "Вы выбрали: X".
+Иначе — "Такого блюда нет".
+'''
+'''
+menu = ["Плов", "Лагман", "Манты", "Шашлык", "Чай"]
+
+for i, foods in enumerate(menu, start=1):
+    print(i, foods)
+
+number_of_food = input('Введите номер блюда: ')
+
+try:
+    number_of_food = int(number_of_food)
+
+    if 0 < number_of_food < 6:
+        print(f'Вы выбрали: {menu[number_of_food - 1]}')
+    else:
+        print('Такого блюда нет')
+
+except ValueError:
+    print('Введите число!')
+'''
+'''
+6. Параллельные списки
+(zip, list, for, if)
+
+names = ["Аня", "Борис", "Вера", "Глеб"]
+grades = [5, 3, 4, 2]
+
+Выведи:
+
+пары имя - оценка (через zip)
+только тех, у кого >= 4
+средний балл
+
+Ожидаемый вывод:
+
+Аня - 5
+Борис - 3
+Вера - 4
+Глеб - 2
+Хорошисты: Аня, Вера
+Средний: 3.5
+'''
+
+names = ["Аня", "Борис", "Вера", "Глеб"]
+grades = [5, 3, 4, 2]
+
+for name,grade in zip(names,grades):
+    print(name, grade)
+h = []
+for name, grade in zip(names, grades):
+    if grade >= 4:
+        h.append(name)
+print(f'Хорошисты: {", ".join(h)}')
+
+av1 = sum(grades)/len(grades)
+print(f'средний:{av1}')
